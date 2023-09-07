@@ -1,0 +1,90 @@
+.register {
+  background-image: url("../assets/background.jpg");
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register__container {
+  /* width: 400px; */
+  margin: 0 auto;
+  padding: 2rem;
+  border: 4px solid var(--secondary-color);
+  border-radius: 1rem;
+  color: var(--primary-color);
+  position: relative;
+  z-index: 1;
+}
+.register__container::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--secondary-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+  z-index: -1;
+}
+.register__wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 2rem 0 0;
+}
+.form__left,
+.form__right {
+  width: 300px;
+}
+.form__devider {
+  width: 2px;
+  height: 280px;
+  background: var(--secondary-color);
+}
+.form__group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.8rem;
+}
+.input__title {
+  font-size: 2rem;
+}
+.form__group input,
+.form__group textarea {
+  font-size: 1.8rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+.form__group textarea {
+  resize: none;
+}
+.terms {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+.terms label {
+  font-size: 1.4rem;
+}
+.terms input {
+  margin-right: 1rem;
+}
+.form__message {
+  color: red;
+  font-size: 1.2rem;
+}
+.register__wrapper input[type="submit"] {
+  margin-top: 1rem;
+}
+.toggle__page p {
+  font-size: 1.5rem;
+  text-align: right;
+}
+.toggle__page a {
+  color: var(--main-color);
+  font-weight: 500;
+  text-decoration: none;
+}

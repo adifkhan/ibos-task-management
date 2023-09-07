@@ -2,11 +2,22 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Home from "./pages/Home";
+import { createCollection } from "./utilities/database";
+import { useEffect } from "react";
+import Header from "./components/shared/Header";
+import UserProfile from "./pages/UserProfile";
 
 function App() {
+  useEffect(() => {
+    createCollection();
+  }, []);
   return (
     <div>
+      <Header />
       <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<UserProfile />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
       </Routes>
