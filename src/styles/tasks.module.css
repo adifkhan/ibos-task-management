@@ -1,0 +1,25 @@
+.task__wrapper {
+  padding: 2rem 4rem;
+}
+.table {
+  margin: 0 auto;
+  width: 100%;
+}
+.table thead {
+  background-color: #c7c4c4;
+}
+.table thead th,
+.table tbody tr td {
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 0.5rem 0;
+  text-align: center;
+  border-bottom: 1px solid var(--secondary-color);
+}
+.view__btn {
+  text-decoration: none;
+  padding: 0 1rem;
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+}

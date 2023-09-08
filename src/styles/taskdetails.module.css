@@ -1,0 +1,47 @@
+.taskdetails {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+.task__wrapper {
+  width: 600px;
+  border: 2px solid var(--secondary-color);
+  padding: 2rem;
+  border-radius: 5px;
+}
+.task__wrapper h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+.task__wrapper p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.task__wrapper span {
+  font-weight: 500;
+}
+.team__wrapper {
+  width: 400px;
+  border: 2px solid var(--secondary-color);
+  padding: 2rem;
+  border-radius: 5px;
+}
+.team__wrapper h2 {
+  text-align: center;
+}
+.create__team {
+  margin: 3rem 0;
+}
+.create__team label {
+  display: inline-block;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.create__team input[type="checkbox"] {
+  margin-right: 10px;
+}

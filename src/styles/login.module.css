@@ -1,4 +1,4 @@
-.register {
+.login {
   background-image: url("../assets/background.jpg");
   background-size: cover;
   min-height: 100vh;
@@ -6,8 +6,8 @@
   justify-content: center;
   align-items: center;
 }
-.register__container {
-  /* width: 400px; */
+.login__container {
+  width: 400px;
   margin: 0 auto;
   padding: 2rem;
   border: 4px solid var(--secondary-color);
@@ -16,7 +16,7 @@
   position: relative;
   z-index: 1;
 }
-.register__container::after {
+.login__container::after {
   content: "";
   width: 100%;
   height: 100%;
@@ -26,21 +26,6 @@
   left: 0;
   opacity: 0.4;
   z-index: -1;
-}
-.register__wrapper {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  margin: 2rem 0 0;
-}
-.form__left,
-.form__right {
-  width: 300px;
-}
-.form__devider {
-  width: 2px;
-  height: 280px;
-  background: var(--secondary-color);
 }
 .form__group {
   display: flex;
@@ -77,12 +62,14 @@
   color: red;
   font-size: 1.2rem;
 }
-.register__wrapper input[type="submit"] {
+.login__wrapper input[type="submit"] {
   margin-top: 1rem;
+}
+.toggle__page {
+  margin-top: 0.8rem;
 }
 .toggle__page p {
   font-size: 1.5rem;
-  text-align: right;
 }
 .toggle__page a {
   color: var(--main-color);

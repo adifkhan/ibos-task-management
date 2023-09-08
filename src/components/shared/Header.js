@@ -20,7 +20,7 @@ const Header = () => {
       </div>
       <nav className={style.navbar}>
         <Link to="/">Home</Link>
-        <Link to="/">tasks</Link>
+        <Link to="/tasks">tasks</Link>
         {user ? (
           <div className={style.user}>
             <div

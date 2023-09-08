@@ -7,6 +7,7 @@ import { createCollection } from "./utilities/database";
 import { useEffect } from "react";
 import Header from "./components/shared/Header";
 import UserProfile from "./pages/UserProfile";
+import TaskDetails from "./pages/TaskDetails";
 
 function App() {
   useEffect(() => {
@@ -17,6 +18,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/tasks/:taskId" element={<TaskDetails />} />
         <Route path="/profile" element={<UserProfile />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />

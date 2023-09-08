@@ -1,0 +1,41 @@
+.task__button {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+.task__button a {
+  text-decoration: none;
+}
+.task__form__wrapper {
+  width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+}
+.input__group {
+  display: flex;
+  flex-direction: column;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+.input__group label {
+  font-size: 1.6rem;
+}
+.input__group input,
+.input__group textarea,
+.input__group select {
+  font-size: 1.5rem;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  resize: none;
+}
+.form__message {
+  color: red;
+  font-size: 1.2rem;
+}
+.disabled {
+  display: none;
+}

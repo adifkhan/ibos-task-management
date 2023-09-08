@@ -18,10 +18,11 @@ const createCollection = () => {
     if (!db.objectStoreNames.contains("userCollection")) {
       db.createObjectStore("userCollection", { keyPath: "email" });
     }
+    if (!db.objectStoreNames.contains("taskCollection")) {
+      db.createObjectStore("taskCollection", { keyPath: "taskId" });
+    }
   };
   request.onsuccess = (event) => {
-    // const db = event.target.result;
-    // const objectStore = db.createObjectStore("tasks", { keyPath: "id" });
     console.log("database created successfully");
   };
 };

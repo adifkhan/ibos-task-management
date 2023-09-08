@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import style from "../styles/register.module.css";
+import style from "../styles/login.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../firebase/firebase.config";
@@ -34,12 +34,12 @@ const Login = () => {
   }, [navigate, user]);
 
   return (
-    <section className={style.register}>
-      <div className={style.register__container}>
+    <section className={style.login}>
+      <div className={style.login__container}>
         <div className="heading">
           <h2>Login</h2>
         </div>
-        <div className={style.register__wrapper}>
+        <div className={style.login__wrapper}>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className={style.form__group}>
               <label className={style.input__title}>Email</label>
