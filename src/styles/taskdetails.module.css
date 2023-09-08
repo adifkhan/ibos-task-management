@@ -18,6 +18,9 @@
   text-transform: uppercase;
   margin-bottom: 2rem;
 }
+.task__wrapper h2 {
+  margin-bottom: 1rem;
+}
 .task__wrapper p {
   font-size: 1.5rem;
   margin-bottom: 1rem;
