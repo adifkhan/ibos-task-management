@@ -30,7 +30,7 @@ const Tasks = () => {
               <td>{task?.priority}</td>
               <td>{task?.status}</td>
               <td>
-                <Link className={style.view__btn} to={`/tasks/${task?.id}`}>
+                <Link className={style.view__btn} to={`/tasks/${task?.taskId}`}>
                   view
                 </Link>
               </td>

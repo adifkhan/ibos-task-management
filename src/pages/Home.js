@@ -39,10 +39,10 @@ const Home = () => {
     };
 
     dbPromise.onsuccess = () => {
-      console.log("Opened IndexDB");
       const db = dbPromise.result;
       const transaction = db.transaction("taskCollection", "readwrite");
       const taskData = transaction.objectStore("taskCollection");
+
       const taskInfo = taskData.put({
         taskId: randomId(10),
         admin: user?.email,
@@ -54,20 +54,19 @@ const Home = () => {
         teammembers: [],
       });
 
+      taskInfo.onerror = (event) => {
+        console.log(event);
+        setProccessing(false);
+        setToggleForm(false);
+      };
+
       taskInfo.onsuccess = () => {
         transaction.oncomplete = () => {
           console.log("db closing");
           db.close();
         };
-        alert("task created successfully");
         setProccessing(false);
         window.location.reload();
-      };
-      taskInfo.onerror = (event) => {
-        console.log(event);
-        alert("Error occurred!");
-        setProccessing(false);
-        setToggleForm(false);
       };
     };
   };
