@@ -37,6 +37,12 @@ const Home = () => {
       setProccessing(false);
       setToggleForm(false);
     };
+    dbPromise.onupgradeneeded = (event) => {
+      const db = dbPromise.result;
+      if (!db.objectStoreNames.contains("taskCollection")) {
+        db.createObjectStore("taskCollection", { keyPath: "taskId" });
+      }
+    };
 
     dbPromise.onsuccess = () => {
       const db = dbPromise.result;

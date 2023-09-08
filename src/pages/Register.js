@@ -91,6 +91,12 @@ const Register = () => {
           dbPromise.onerror = (event) => {
             console.log("Couldn't open IndexedDB", event);
           };
+          dbPromise.onupgradeneeded = (event) => {
+            const db = dbPromise.result;
+            if (!db.objectStoreNames.contains("userCollection")) {
+              db.createObjectStore("userCollection", { keyPath: "email" });
+            }
+          };
 
           dbPromise.onsuccess = () => {
             const db = dbPromise.result;
