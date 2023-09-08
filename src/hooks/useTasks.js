@@ -20,6 +20,7 @@ const useTasks = () => {
 
     dbPromise.onsuccess = () => {
       const db = dbPromise.result;
+      console.log(db);
       const transaction = db.transaction("taskCollection", "readonly");
       const taskData = transaction.objectStore("taskCollection");
       const tasks = taskData.getAll();
