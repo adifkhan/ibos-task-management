@@ -1,16 +1,13 @@
 import React from "react";
 import style from "../styles/profile.module.css";
 import useUserData from "../hooks/useUserData";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../firebase/firebase.config";
+import { useParams } from "react-router-dom";
 
 const UserProfile = () => {
-  const [user] = useAuthState(auth);
+  const { userId } = useParams();
   const [usersData] = useUserData();
 
-  const currentUser = usersData.find(
-    (userData) => userData.email === user.email
-  );
+  const currentUser = usersData.find((userData) => userData?.id === userId);
 
   return (
     <section className={style.profile__container}>

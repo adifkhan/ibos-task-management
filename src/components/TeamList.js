@@ -123,7 +123,7 @@ const TeamList = ({ selectedTask }) => {
       )}
       {selectedTask?.status === "in progress" && (
         <button className="button" onClick={handleComplete}>
-          {proccessing ? "Marking..." : "Mark as Complete"}
+          {proccessing ? "Marking..." : "Mark as Completed"}
         </button>
       )}
     </div>

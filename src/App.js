@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import Header from "./components/shared/Header";
 import UserProfile from "./pages/UserProfile";
 import TaskDetails from "./pages/TaskDetails";
+import UsersList from "./pages/UsersList";
 
 function App() {
   useEffect(() => {
@@ -19,7 +20,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tasks/:taskId" element={<TaskDetails />} />
-        <Route path="/profile" element={<UserProfile />} />
+        <Route path="/userslist" element={<UsersList />} />
+        <Route path="/profile/:userId" element={<UserProfile />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
       </Routes>

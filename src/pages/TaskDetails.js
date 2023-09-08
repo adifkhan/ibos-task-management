@@ -13,7 +13,7 @@ const TaskDetails = () => {
   return (
     <div>
       {selectedTask?.status === "completed" && (
-        <div className="heading">
+        <div className="heading" style={{ marginTop: "20px" }}>
           <h2>Congratulations On Task Completion! You guys did a good work.</h2>
         </div>
       )}

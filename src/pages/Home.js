@@ -72,6 +72,17 @@ const Home = () => {
   };
   return (
     <div>
+      <p
+        style={{
+          textAlign: "center",
+          color: "red",
+          fontSize: "1.2rem",
+          marginTop: "1rem",
+        }}
+      >
+        I could not give by best in this task due to physical illness. I hope
+        you will consider... thanks.!
+      </p>
       <div
         className={toggleform ? `${style.disabled}` : `${style.task__button}`}
       >
