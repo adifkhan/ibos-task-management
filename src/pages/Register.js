@@ -86,7 +86,7 @@ const Register = () => {
           imageUrl = result.data.url;
 
           // store in indexedDb//
-          const dbPromise = idb.open("task-manager", 1);
+          const dbPromise = idb.open("task-manager", 2);
 
           dbPromise.onerror = (event) => {
             console.log("Couldn't open IndexedDB", event);
@@ -319,7 +319,7 @@ const Register = () => {
                 </label>
               </div>
               <div className={style.form__group}>
-                <label className={style.input__title}>Image</label>
+                <label className={style.input__title}>Profile Picture</label>
                 <input
                   type="file"
                   {...register("image", {

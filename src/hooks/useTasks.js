@@ -5,35 +5,30 @@ const useTasks = () => {
   const [tasksData, setTasksData] = useState([]);
 
   useEffect(() => {
-    const dbPromise = idb.open("task-manager", 1);
-
-    dbPromise.onerror = (event) => {
-      console.log("Couldn't open IndexedDB", event);
-    };
-
-    dbPromise.onupgradeneeded = (event) => {
-      const db = dbPromise.result;
-      if (!db.objectStoreNames.contains("taskCollection")) {
-        db.createObjectStore("taskCollection", { keyPath: "taskId" });
-      }
-    };
-
-    dbPromise.onsuccess = () => {
-      const db = dbPromise.result;
-      const transaction = db.transaction("taskCollection", "readonly");
-      const taskData = transaction.objectStore("taskCollection");
-      const tasks = taskData.getAll();
-
-      tasks.onsuccess = (query) => {
-        setTasksData(query.srcElement.result);
+    setTimeout(() => {
+      const dbPromise = idb.open("task-manager", 2);
+      dbPromise.onerror = (event) => {
+        console.log("Couldn't open IndexedDB", event);
       };
-      tasks.onerror = (event) => {
-        console.log("Error occurred while geting Tasks");
+
+      dbPromise.onsuccess = () => {
+        const db = dbPromise.result;
+        if (db.objectStoreNames.contains("taskCollection")) {
+          const transaction = db.transaction("taskCollection", "readonly");
+          const taskData = transaction.objectStore("taskCollection");
+          const tasks = taskData.getAll();
+          tasks.onsuccess = (query) => {
+            setTasksData(query.srcElement.result);
+          };
+          tasks.onerror = (event) => {
+            console.log("Error occurred while geting Tasks");
+          };
+          transaction.oncomplete = () => {
+            db.close();
+          };
+        }
       };
-      transaction.oncomplete = () => {
-        db.close();
-      };
-    };
+    }, 1000);
   }, []);
 
   return [tasksData];

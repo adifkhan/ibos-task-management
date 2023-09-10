@@ -30,7 +30,7 @@ const Home = () => {
 
   const onSubmit = (data) => {
     setProccessing(true);
-    const dbPromise = idb.open("task-manager", 1);
+    const dbPromise = idb.open("task-manager", 2);
 
     dbPromise.onerror = (event) => {
       console.log("Couldn't open IndexedDB", event);

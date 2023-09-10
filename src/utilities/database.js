@@ -5,9 +5,8 @@ const createCollection = () => {
     alert("This brower does not support IndexedDB");
     return;
   }
-  //   console.log(idb);
 
-  const request = idb.open("task-manager", 1);
+  const request = idb.open("task-manager", 2);
 
   request.onerror = (event) => {
     console.log("Couldn't open IndexedDB", event);

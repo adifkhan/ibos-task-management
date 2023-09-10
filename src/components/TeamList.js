@@ -26,7 +26,7 @@ const TeamList = ({ selectedTask }) => {
   // eventListener for assign team and store in db //
   const handleAssign = () => {
     setProccessing(true);
-    const dbPromise = idb.open("task-manager", 1);
+    const dbPromise = idb.open("task-manager", 2);
 
     dbPromise.onerror = (event) => {
       console.log("Couldn't open IndexedDB", event);
@@ -60,7 +60,7 @@ const TeamList = ({ selectedTask }) => {
   // eventListener for marking task completion and store in db //
   const handleComplete = () => {
     setProccessing(true);
-    const dbPromise = idb.open("task-manager", 1);
+    const dbPromise = idb.open("task-manager", 2);
 
     dbPromise.onerror = (event) => {
       console.log("Couldn't open IndexedDB", event);
